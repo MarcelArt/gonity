@@ -3,6 +3,7 @@ package main
 import (
 	"github.com/MarcelArt/gonity/internal/entities"
 	"github.com/MarcelArt/gonity/pkg/gameobject"
+	"github.com/MarcelArt/gonity/pkg/world"
 	rl "github.com/gen2brain/raylib-go/raylib"
 )
 
@@ -32,6 +33,8 @@ func main() {
 	defer rl.CloseWindow()
 
 	rl.SetTargetFPS(60)
+
+	world.SetupGravity(0, 980)
 
 	gameObjects := start(entities.RegisterPlayerEntity)
 

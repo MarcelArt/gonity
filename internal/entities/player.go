@@ -22,6 +22,11 @@ func RegisterPlayerEntity() *gameobject.GameObject {
 		GameObject: player,
 	}
 
+	rigidBody := &gameobject.RigidBody2D{
+		Velocity:   rl.Vector2Zero(),
+		GameObject: player,
+	}
+
 	playerMovement := &behaviours.PlayerMovement{
 		Transform: transform,
 		Speed:     20,
@@ -30,6 +35,7 @@ func RegisterPlayerEntity() *gameobject.GameObject {
 	player.Components = append(player.Components, transform)
 	player.Components = append(player.Components, sprite)
 	player.Components = append(player.Components, playerMovement)
+	player.Components = append(player.Components, rigidBody)
 
 	return player
 }
