@@ -38,6 +38,8 @@ func main() {
 	for !rl.WindowShouldClose() {
 		rl.BeginDrawing()
 
+		rl.DrawFPS(0, 0)
+
 		rl.ClearBackground(rl.RayWhite)
 
 		update(gameObjects)
