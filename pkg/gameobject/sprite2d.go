@@ -37,5 +37,5 @@ func (c *Sprite2D) Update() {
 		return
 	}
 
-	rl.DrawTexture(c.texture, int32(transform.Position.X), int32(transform.Position.Y), c.Tint)
+	rl.DrawTextureV(c.texture, transform.Position, c.Tint)
 }
