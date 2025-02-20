@@ -28,8 +28,10 @@ func RegisterPlayerEntity() *gameobject.GameObject {
 	}
 
 	playerMovement := &behaviours.PlayerMovement{
-		Transform: transform,
-		Speed:     20,
+		Transform:    transform,
+		RigidBody:    rigidBody,
+		Speed:        20,
+		JumpStrength: 100,
 	}
 
 	player.Components = append(player.Components, transform)
