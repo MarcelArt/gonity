@@ -36,38 +36,17 @@ func main() {
 
 	world.SetupGravity(0, 980)
 
-	gameObjects := start(entities.RegisterPlayerEntity)
+	gameObjects := start(entities.RegisterPlayerEntity, entities.RegisterMapEntity)
 
 	for !rl.WindowShouldClose() {
 		rl.BeginDrawing()
 
 		rl.DrawFPS(0, 0)
 
-		rl.ClearBackground(rl.RayWhite)
+		rl.ClearBackground(rl.Green)
 
 		update(gameObjects)
 
 		rl.EndDrawing()
 	}
 }
-
-// func main() {
-// 	rl.InitWindow(800, 450, "raylib [core] example - basic window")
-// 	defer rl.CloseWindow()
-
-// 	rl.SetTargetFPS(60)
-
-// 	playerImage := rl.LoadImage("assets/character_squareGreen.png")
-// 	playerTexture := rl.LoadTextureFromImage(playerImage)
-// 	rl.UnloadImage(playerImage) // Unload image from RAM, it is now in VRAM
-// 	for !rl.WindowShouldClose() {
-// 		rl.BeginDrawing()
-
-// 		rl.ClearBackground(rl.RayWhite)
-
-// 		rl.DrawTexture(playerTexture, 600, 100, rl.White)
-
-// 		rl.EndDrawing()
-// 	}
-// 	rl.UnloadTexture(playerTexture) // Unload texture when done
-// }
